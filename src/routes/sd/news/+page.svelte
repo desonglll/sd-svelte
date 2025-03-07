@@ -11,7 +11,7 @@
   }
 
   import news from "../../../data/news.json";
-  const newsList: NewsItem[] = news;
+  const newsList: NewsItem[] = news.sort((a, b) => b.id - a.id);
 
   function handleNewsClick(id: number) {
     goto(`/sd/news/${id}`);

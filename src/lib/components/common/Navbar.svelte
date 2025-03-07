@@ -12,10 +12,13 @@
       <button id="nav-2" class="item" on:click={() => goto("/sd/product")}
         >Product</button
       >
-      <button id="nav-3" class="item" on:click={() => goto("/sd/about")}
+      <button id="nav-3" class="item" on:click={() => goto("/sd/news")}
+        >News</button
+      >
+      <button id="nav-4" class="item" on:click={() => goto("/sd/about")}
         >About Us</button
       >
-      <button id="nav-4" class="item" on:click={() => goto("/sd/contact")}
+      <button id="nav-5" class="item" on:click={() => goto("/sd/contact")}
         >Contact Us</button
       >
     </div>
