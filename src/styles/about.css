@@ -1,0 +1,203 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #f5f5f7;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 5rem;
+  padding: 0 20px;
+  width: 100%;
+}
+
+/* 英雄部分 */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero-section .hero-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+.hero-section .hero-content .hero-image {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease;
+}
+.hero-section .hero-content .hero-image:hover {
+  transform: scale(1.02);
+}
+.hero-section .hero-content .text-content {
+  width: 50%;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.hero-section .hero-content .text-content.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.hero-section .hero-content .text-content h1 {
+  font-size: 48px;
+  font-weight: 600;
+  color: #000;
+  margin: 0 0 10px;
+  letter-spacing: -0.5px;
+}
+.hero-section .hero-content .text-content .subtitle {
+  font-size: 24px;
+  font-weight: 400;
+  color: #666;
+  margin: 0 0 20px;
+}
+.hero-section .hero-content .text-content .description {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* 合作部分 */
+.partnerships {
+  padding: 80px 0;
+}
+.partnerships .partnership-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+}
+.partnerships .partnership-content .text-wrapper {
+  width: 50%;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.partnerships .partnership-content .text-wrapper.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.partnerships .partnership-content .text-wrapper h2 {
+  font-size: 36px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 20px;
+}
+.partnerships .partnership-content .text-wrapper p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #666;
+}
+.partnerships .partnership-content .section-image {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease;
+}
+.partnerships .partnership-content .section-image:hover {
+  transform: scale(1.02);
+}
+
+/* 愿景部分 */
+.vision {
+  padding: 80px 0;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+.vision .vision-content {
+  display: flex;
+  flex-direction: row-reverse; /* 图片在右，文字在左 */
+  align-items: center;
+  gap: 40px;
+}
+.vision .vision-content .text-wrapper {
+  width: 50%;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.vision .vision-content .text-wrapper.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.vision .vision-content .text-wrapper h2 {
+  font-size: 36px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 20px;
+}
+.vision .vision-content .text-wrapper p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #666;
+}
+.vision .vision-content .section-image {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease;
+}
+.vision .vision-content .section-image:hover {
+  transform: scale(1.02);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .hero-content,
+  .partnership-content,
+  .vision-content {
+    flex-direction: column !important;
+    text-align: center;
+  }
+  .hero-content .hero-image,
+  .hero-content .section-image,
+  .hero-content .text-wrapper,
+  .hero-content .text-content,
+  .partnership-content .hero-image,
+  .partnership-content .section-image,
+  .partnership-content .text-wrapper,
+  .partnership-content .text-content,
+  .vision-content .hero-image,
+  .vision-content .section-image,
+  .vision-content .text-wrapper,
+  .vision-content .text-content {
+    width: 100% !important;
+  }
+  .hero-content h1,
+  .partnership-content h1,
+  .vision-content h1 {
+    font-size: 36px !important;
+  }
+  .hero-content .subtitle,
+  .partnership-content .subtitle,
+  .vision-content .subtitle {
+    font-size: 20px !important;
+  }
+  .hero-content .description,
+  .hero-content p,
+  .partnership-content .description,
+  .partnership-content p,
+  .vision-content .description,
+  .vision-content p {
+    font-size: 16px !important;
+  }
+}
+
+/*# sourceMappingURL=about.css.map */

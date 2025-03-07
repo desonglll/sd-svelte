@@ -1,0 +1,55 @@
+<script lang="ts">
+  import YtbVideo from "$lib/components/common/YtbVideo.svelte";
+  import Card from "$lib/components/common/Card.svelte";
+  import Anchor from "$lib/components/common/Anchor.svelte";
+  import demo from "$lib/nav";
+  import StaticsData from "$lib/components/StaticsData.svelte";
+  import TagNavData from "$lib/components/TagNavData.svelte";
+  import Svg from "$lib/components/common/Svg.svelte";
+
+  // const { data }: PageProps = $props();
+</script>
+
+<div class="page">
+  <YtbVideo />
+  <Anchor
+    items={demo.map((item) => ({
+      title: item.title,
+      href: item.id.toString(),
+      key: item.id,
+    }))}
+  />
+  <div class="card-list">
+    {#each demo as card (card.id)}
+      <Card
+        id={card.id.toString()}
+        title={card.title}
+        description={card.content}
+        img={card.image || ""}
+        href={card.slug}
+      >
+        {#if card.id === 1}
+          <TagNavData />
+          <Svg path="/choose-card.svg" alt="choose-card" />
+        {:else if card.id === 2}
+          <StaticsData />
+        {:else if card.id === 3}
+          <Svg path="/newspaper.svg" alt="newspaper" />
+        {/if}
+      </Card>
+    {/each}
+  </div>
+</div>
+
+<style lang="scss">
+  .page {
+    width: 100%;
+
+    .card-list {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+</style>

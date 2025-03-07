@@ -1,0 +1,225 @@
+$primary-color: #000;
+$secondary-color: #666;
+$background-color: #f5f5f7;
+$font-family:
+  "SF Pro Display",
+  -apple-system,
+  BlinkMacSystemFont,
+  sans-serif;
+
+body {
+  margin: 0;
+  font-family: $font-family;
+  background-color: $background-color;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 5rem;
+  padding: 0 20px;
+  width: 100%;
+}
+
+/* 英雄部分 */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+
+  .hero-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+
+    .hero-image {
+      width: 50%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: transform 0.5s ease;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+
+    .text-content {
+      width: 50%;
+      opacity: 0;
+      transform: translateY(20px);
+      transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+
+      &.fade-in {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      h1 {
+        font-size: 48px;
+        font-weight: 600;
+        color: $primary-color;
+        margin: 0 0 10px;
+        letter-spacing: -0.5px;
+      }
+
+      .subtitle {
+        font-size: 24px;
+        font-weight: 400;
+        color: $secondary-color;
+        margin: 0 0 20px;
+      }
+
+      .description {
+        font-size: 18px;
+        line-height: 1.6;
+        color: $secondary-color;
+      }
+    }
+  }
+}
+
+/* 合作部分 */
+.partnerships {
+  padding: 80px 0;
+
+  .partnership-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+
+    .text-wrapper {
+      width: 50%;
+      opacity: 0;
+      transform: translateY(20px);
+      transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+
+      &.fade-in {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      h2 {
+        font-size: 36px;
+        font-weight: 600;
+        color: $primary-color;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 1.6;
+        color: $secondary-color;
+      }
+    }
+
+    .section-image {
+      width: 50%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: transform 0.5s ease;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+  }
+}
+
+/* 愿景部分 */
+.vision {
+  padding: 80px 0;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+  .vision-content {
+    display: flex;
+    flex-direction: row-reverse; /* 图片在右，文字在左 */
+    align-items: center;
+    gap: 40px;
+
+    .text-wrapper {
+      width: 50%;
+      opacity: 0;
+      transform: translateY(20px);
+      transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+
+      &.fade-in {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      h2 {
+        font-size: 36px;
+        font-weight: 600;
+        color: $primary-color;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 1.6;
+        color: $secondary-color;
+      }
+    }
+
+    .section-image {
+      width: 50%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: transform 0.5s ease;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+  }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .hero-content,
+  .partnership-content,
+  .vision-content {
+    flex-direction: column !important;
+    text-align: center;
+
+    .hero-image,
+    .section-image,
+    .text-wrapper,
+    .text-content {
+      width: 100% !important;
+    }
+
+    h1 {
+      font-size: 36px !important;
+    }
+
+    .subtitle {
+      font-size: 20px !important;
+    }
+
+    .description,
+    p {
+      font-size: 16px !important;
+    }
+  }
+}
