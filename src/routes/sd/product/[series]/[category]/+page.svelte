@@ -1,30 +1,20 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import static_data from "../../../data/tooth.json";
   import type { Category, Product, Series } from "$lib/props";
+  import { series, categories, products } from "$lib/nav";
+  import { goto } from "$app/navigation";
+  import type { PageProps } from "../../../../../../.svelte-kit/types/src/routes/sd/product/[series]/[category]/$types";
 
-  const products: Product[] = static_data;
-  const seriesList: Series[] = [
-    { id: 0, name: "All", title: "All Products" }, // 添加 "All" 选项
-    ...Array.from(
-      new Map(
-        products.map((p) => [p.category.series.id, p.category.series])
-      ).values()
-    )
-  ];
+  let { data }: PageProps = $props();
 
-  const categories: Category[] = Array.from(
-    new Map(products.map((p) => [p.category.id, p.category])).values()
-  );
-
-  let selectedSeries: Series | null = null;
-  let selectedCategory: Category | null = null;
-  let filteredCategories: Category[] = [];
-  let filteredProducts: Product[] = [];
+  let selectedSeries = $state<Series | null>(null);
+  let selectedCategory = $state<Category | null>(data);
+  let filteredCategories = $state<Category[]>([]);
+  let filteredProducts = $state<Product[]>([]);
 
   onMount(() => {
-    if (seriesList.length > 0) {
-      selectedSeries = seriesList[0]; // 默认选择 "All"
+    if (series.length > 0) {
+      selectedSeries = series.find((item) => (item.name === data.series?.name)) as Series;
       filterCategories();
       filterProducts();
     }
@@ -32,7 +22,6 @@
 
   function filterCategories() {
     if (selectedSeries && selectedSeries.id !== 0) {
-      // 如果不是 "All"
       const seriesId = selectedSeries.id; // Cache the id to ensure type safety
       filteredCategories = categories.filter(
         (category) => category.series.id === seriesId
@@ -62,6 +51,7 @@
   }
 
   function handleSeriesSelect(series: Series) {
+    goto(`/sd/product/${series.name}`);
     selectedSeries = series;
     filterCategories();
     selectedCategory =
@@ -72,6 +62,7 @@
   }
 
   function handleCategorySelect(category: Category) {
+    goto(`/sd/product/${category.series.name}/${category.name}`);
     selectedCategory = category;
     filterProducts();
   }
@@ -89,11 +80,11 @@
     <div class="series-filter">
       <h2>Series</h2>
       <div class="series-list">
-        {#each seriesList as series}
+        {#each series as series}
           <button
             class="series-btn"
             class:active={selectedSeries?.id === series.id}
-            on:click={() => handleSeriesSelect(series)}
+            onclick={() => handleSeriesSelect(series)}
           >
             {series.name}
           </button>
@@ -109,7 +100,7 @@
             <button
               class="category-btn"
               class:active={selectedCategory?.id === category.id}
-              on:click={() => handleCategorySelect(category)}
+              onclick={() => handleCategorySelect(category)}
             >
               {category.name}
             </button>

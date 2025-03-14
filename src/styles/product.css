@@ -1,0 +1,233 @@
+.products-page {
+  background-color: #f5f5f7;
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
+  padding: 0 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.hero {
+  text-align: center;
+  padding: 60px 0;
+}
+.hero h1 {
+  font-size: 48px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+.hero .subtitle {
+  font-size: 22px;
+  color: #6e6e73;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.filter-section {
+  padding: 20px 0;
+}
+.filter-section .series-filter,
+.filter-section .category-filter {
+  margin-bottom: 30px;
+}
+.filter-section .series-filter h2,
+.filter-section .category-filter h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.filter-section .series-filter .series-list,
+.filter-section .series-filter .category-list,
+.filter-section .category-filter .series-list,
+.filter-section .category-filter .category-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.filter-section .series-filter .series-list .series-btn,
+.filter-section .series-filter .series-list .category-btn,
+.filter-section .series-filter .category-list .series-btn,
+.filter-section .series-filter .category-list .category-btn,
+.filter-section .category-filter .series-list .series-btn,
+.filter-section .category-filter .series-list .category-btn,
+.filter-section .category-filter .category-list .series-btn,
+.filter-section .category-filter .category-list .category-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #6e6e73;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: 20px;
+}
+.filter-section .series-filter .series-list .series-btn.active, .filter-section .series-filter .series-list .series-btn:hover,
+.filter-section .series-filter .series-list .category-btn.active,
+.filter-section .series-filter .series-list .category-btn:hover,
+.filter-section .series-filter .category-list .series-btn.active,
+.filter-section .series-filter .category-list .series-btn:hover,
+.filter-section .series-filter .category-list .category-btn.active,
+.filter-section .series-filter .category-list .category-btn:hover,
+.filter-section .category-filter .series-list .series-btn.active,
+.filter-section .category-filter .series-list .series-btn:hover,
+.filter-section .category-filter .series-list .category-btn.active,
+.filter-section .category-filter .series-list .category-btn:hover,
+.filter-section .category-filter .category-list .series-btn.active,
+.filter-section .category-filter .category-list .series-btn:hover,
+.filter-section .category-filter .category-list .category-btn.active,
+.filter-section .category-filter .category-list .category-btn:hover {
+  color: #000;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 0;
+}
+.product-grid .product-card {
+  width: 300px;
+  height: 400px;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+.product-grid .product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+.product-grid .product-card .product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #d2d2d7;
+}
+.product-grid .product-card .product-info {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.product-grid .product-card .product-info h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #000;
+  margin: 0 0 10px;
+}
+.product-grid .product-card .product-info p {
+  font-size: 14px;
+  color: #6e6e73;
+  line-height: 1.5;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.product-grid .no-products {
+  grid-column: 1/-1;
+  text-align: center;
+  font-size: 18px;
+  color: #6e6e73;
+  padding: 40px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 40px 0;
+  }
+  .hero h1 {
+    font-size: 36px;
+  }
+  .hero .subtitle {
+    font-size: 18px;
+  }
+  .filter-section .series-list,
+  .filter-section .category-list {
+    gap: 10px;
+  }
+  .filter-section .series-list .series-btn,
+  .filter-section .series-list .category-btn,
+  .filter-section .category-list .series-btn,
+  .filter-section .category-list .category-btn {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+  .filter-section h2 {
+    font-size: 20px;
+  }
+  .product-grid {
+    grid-template-columns: repeat(auto-fit, 260px);
+    gap: 20px;
+    padding: 30px 0;
+  }
+  .product-grid .product-card {
+    width: 260px;
+    height: 360px;
+  }
+  .product-grid .product-card .product-image {
+    height: 180px;
+  }
+}
+@media (max-width: 480px) {
+  .hero {
+    padding: 30px 0;
+  }
+  .hero h1 {
+    font-size: 28px;
+  }
+  .hero .subtitle {
+    font-size: 16px;
+  }
+  .filter-section .series-list,
+  .filter-section .category-list {
+    gap: 8px;
+  }
+  .filter-section .series-list .series-btn,
+  .filter-section .series-list .category-btn,
+  .filter-section .category-list .series-btn,
+  .filter-section .category-list .category-btn {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+  .filter-section h2 {
+    font-size: 18px;
+  }
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 20px 0;
+  }
+  .product-grid .product-card {
+    width: 100%;
+    max-width: 300px;
+    height: 360px;
+  }
+  .product-grid .product-card .product-image {
+    height: 180px;
+  }
+  .product-grid .product-card .product-info {
+    padding: 15px;
+  }
+  .product-grid .product-card .product-info h3 {
+    font-size: 18px;
+  }
+  .product-grid .product-card .product-info p {
+    font-size: 13px;
+  }
+}
+
+/*# sourceMappingURL=product.css.map */

@@ -10,16 +10,20 @@
     <div class="nav-container">
       <button id="nav-1" class="item" on:click={() => goto("/sd")}>Home</button>
       <button id="nav-2" class="item" on:click={() => goto("/sd/product")}
-        >Product</button
+      >Product
+      </button
       >
       <button id="nav-3" class="item" on:click={() => goto("/sd/news")}
-        >News</button
+      >News
+      </button
       >
       <button id="nav-4" class="item" on:click={() => goto("/sd/about")}
-        >About Us</button
+      >About Us
+      </button
       >
       <button id="nav-5" class="item" on:click={() => goto("/sd/contact")}
-        >Contact Us</button
+      >Contact Us
+      </button
       >
     </div>
   </div>

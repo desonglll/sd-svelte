@@ -1,0 +1,254 @@
+$primary-color: #000;
+$secondary-color: #6e6e73;
+$background-color: #f5f5f7;
+$accent-color: #0071e3;
+$font-family: "SF Pro Display",
+-apple-system,
+BlinkMacSystemFont,
+sans-serif;
+
+.products-page {
+  background-color: $background-color;
+  font-family: $font-family;
+  padding: 0 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.hero {
+  text-align: center;
+  padding: 60px 0;
+
+  h1 {
+    font-size: 48px;
+    font-weight: 600;
+    color: $primary-color;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+  }
+
+  .subtitle {
+    font-size: 22px;
+    color: $secondary-color;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+.filter-section {
+  padding: 20px 0;
+
+  .series-filter,
+  .category-filter {
+    margin-bottom: 30px;
+
+    h2 {
+      font-size: 24px;
+      font-weight: 600;
+      color: $primary-color;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .series-list,
+    .category-list {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+
+      .series-btn,
+      .category-btn {
+        background: none;
+        border: none;
+        font-size: 16px;
+        font-weight: 500;
+        color: $secondary-color;
+        padding: 8px 16px;
+        cursor: pointer;
+        transition: color 0.3s ease,
+        background-color 0.3s ease;
+        border-radius: 20px;
+
+        &.active,
+        &:hover {
+          color: $primary-color;
+          background-color: rgba(0, 0, 0, 0.05);
+        }
+      }
+    }
+  }
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 0;
+
+  .product-card {
+    width: 300px;
+    height: 400px;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease,
+    box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 1px solid #d2d2d7;
+    }
+
+    .product-info {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      h3 {
+        font-size: 20px;
+        font-weight: 600;
+        color: $primary-color;
+        margin: 0 0 10px;
+      }
+
+      p {
+        font-size: 14px;
+        color: $secondary-color;
+        line-height: 1.5;
+        margin: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+      }
+    }
+  }
+
+  .no-products {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 18px;
+    color: $secondary-color;
+    padding: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 40px 0;
+
+    h1 {
+      font-size: 36px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+    }
+  }
+
+  .filter-section {
+    .series-list,
+    .category-list {
+      gap: 10px;
+
+      .series-btn,
+      .category-btn {
+        font-size: 14px;
+        padding: 6px 12px;
+      }
+    }
+
+    h2 {
+      font-size: 20px;
+    }
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(auto-fit, 260px);
+    gap: 20px;
+    padding: 30px 0;
+
+    .product-card {
+      width: 260px;
+      height: 360px;
+
+      .product-image {
+        height: 180px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 30px 0;
+
+    h1 {
+      font-size: 28px;
+    }
+
+    .subtitle {
+      font-size: 16px;
+    }
+  }
+
+  .filter-section {
+    .series-list,
+    .category-list {
+      gap: 8px;
+
+      .series-btn,
+      .category-btn {
+        font-size: 13px;
+        padding: 5px 10px;
+      }
+    }
+
+    h2 {
+      font-size: 18px;
+    }
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 20px 0;
+
+    .product-card {
+      width: 100%;
+      max-width: 300px;
+      height: 360px;
+
+      .product-image {
+        height: 180px;
+      }
+
+      .product-info {
+        padding: 15px;
+
+        h3 {
+          font-size: 18px;
+        }
+
+        p {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}

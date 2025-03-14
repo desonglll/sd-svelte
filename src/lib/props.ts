@@ -100,3 +100,30 @@ export interface NewsProps {
   content: string;
   images: NewsImageProps[];
 }
+
+export interface Series {
+  id: number;
+  name: string;
+  title: string;
+}
+
+export interface Category {
+  id: number;
+  series: Series;
+  name: string;
+  title: string;
+  description: string;
+  imageSrc: string;
+  slug: string;
+}
+
+export interface Product {
+  id: number;
+  category: Category;
+  name: string;
+  title: string;
+  description: string;
+  image: string;
+  imageSrc: string;
+  language: string;
+}

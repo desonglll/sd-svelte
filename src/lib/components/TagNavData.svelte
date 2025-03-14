@@ -1,6 +1,7 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
-  import { series } from "$lib/nav";
+  import series from "../../data/series.json";
+
   function navigateTo(path: string) {
     goto(`sd/product/${path}`);
   }

@@ -1,3 +1,6 @@
+import type { Category, Product, Series } from "$lib/props";
+import static_data from "../data/tooth.json";
+
 const demo = [
   {
     id: 1,
@@ -90,57 +93,18 @@ const demo = [
   },
 ];
 
-export const series = [
-  {
-    id: 1,
-    name: "d-series",
-    title: "D Series",
-  },
-  {
-    id: 2,
-    name: "dayu-series",
-    title: "Dayu Series",
-  },
-  {
-    id: 3,
-    name: "cater-series",
-    title: "Cater Series",
-  },
-  {
-    id: 4,
-    name: "hitachi-series",
-    title: "Hitachi Series",
-  },
-  {
-    id: 5,
-    name: "kobelco-series",
-    title: "Kobelco Series",
-  },
-  {
-    id: 6,
-    name: "volvo-series",
-    title: "Volvo Series",
-  },
-  {
-    id: 7,
-    name: "hyundai-series",
-    title: "Hyundai Series",
-  },
-  {
-    id: 8,
-    name: "komatsu-series",
-    title: "Komatsu Series",
-  },
-  {
-    id: 9,
-    name: "xiaozi",
-    title: "Xiaozi",
-  },
-  {
-    id: 10,
-    name: "combined",
-    title: "Combined",
-  },
+export default demo;
+
+export const products: Product[] = static_data;
+export const series: Series[] = [
+  { id: 0, name: "All", title: "All Products" }, // 添加 "All" 选项
+  ...Array.from(
+    new Map(
+      products.map((p) => [p.category.series.id, p.category.series]),
+    ).values(),
+  ),
 ];
 
-export default demo;
+export const categories: Category[] = Array.from(
+  new Map(products.map((p) => [p.category.id, p.category])).values(),
+);

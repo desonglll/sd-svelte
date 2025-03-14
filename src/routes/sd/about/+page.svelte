@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
+
   let isVisible = false;
 
   onMount(() => {
@@ -67,5 +68,5 @@
 </div>
 
 <style lang="scss">
-  @import "../../../styles/about.scss";
+  @import "$styles/about.scss";
 </style>
