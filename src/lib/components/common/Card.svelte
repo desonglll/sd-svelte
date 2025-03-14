@@ -53,6 +53,6 @@
 </div>
 
 <style lang="scss">
-  @use "$styles/card/card-default" as *;
-  //@use "$styles/card/card-apple" as *;
+  //@use "$styles/card/card-default" as *;
+  @use "$styles/card/card-apple" as *;
 </style>

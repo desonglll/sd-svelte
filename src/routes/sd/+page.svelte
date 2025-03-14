@@ -6,12 +6,16 @@
   import StaticsData from "$lib/components/StaticsData.svelte";
   import TagNavData from "$lib/components/TagNavData.svelte";
   import Svg from "$lib/components/common/Svg.svelte";
+  import Logo from "$lib/components/common/Logo.svelte";
 
   // const { data }: PageProps = $props();
 </script>
 
 <div class="page">
   <YtbVideo />
+  <div class="static-index">
+    <img style="width: 100%;height: auto" src="/about-hero.jpg" />
+  </div>
   <Anchor
     items={demo.map((item) => ({
       title: item.title,
@@ -52,4 +56,15 @@
       align-items: center;
     }
   }
+
+  .static-index {
+    display: none; /* 默认在大屏幕隐藏 */
+    width: 100%; /* 让 div 占满父级 */
+    height: 300px; /* 你可以根据需要调整高度 */
+
+    @media (max-width: 768px) {
+      display: block; /* 小屏幕显示 */
+    }
+  }
+
 </style>

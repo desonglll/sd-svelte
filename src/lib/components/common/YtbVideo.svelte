@@ -22,6 +22,9 @@
     width: 100%;
     height: 86vh; // 设置父容器的高度
     overflow: hidden;
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 
   .video {

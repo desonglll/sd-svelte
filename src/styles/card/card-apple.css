@@ -1,148 +1,172 @@
 @charset "UTF-8";
-/* Apple-inspired variables */
 .card-container {
-  --card-height: 80vh; /* Slightly reduced for better fit */
+  --card-height: 86vh;
   height: var(--card-height);
-  scroll-margin-top: 14vh; /* For smooth scrolling anchor behavior */
+  scroll-margin-top: 14vh;
   background-color: #f5f5f7;
-  margin-bottom: 60px; /* Consistent with Apple's spacing */
-  width: 100%;
-  max-width: 1200px; /* Matches .about-container max-width */
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 20px; /* Consistent padding */
+  margin-bottom: 50px;
 }
 
 .card {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  height: 100%;
-  background-color: #fff; /* White card background like .vision */
-  border-radius: 12px; /* Softer corners like Apple’s images */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  transition: all 0.4s ease-in-out;
+  border-radius: 0;
+  border: none;
   overflow: hidden;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding: 0 20px;
 }
 .card:hover {
-  transform: translateY(-8px); /* Slightly more lift for emphasis */
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.1); /* Deeper shadow on hover */
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
 }
 @media (max-width: 768px) {
   .card {
-    flex-direction: column;
-    height: auto; /* Adaptive height on mobile */
-    border-radius: 10px; /* Slightly smaller radius for smaller screens */
-  }
-}
-
-.card-image {
-  width: 50%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease; /* Smooth scaling like .section-image */
-}
-.card-image:hover {
-  transform: scale(1.02); /* Subtle zoom effect */
-}
-@media (max-width: 768px) {
-  .card-image {
-    width: 100%;
-    height: 300px; /* Fixed height for consistency */
+    flex-direction: column; /* 在小屏幕上垂直堆叠 */
+    height: 100%; /* 自适应高度 */
+    margin-bottom: 1rem; /* 减小底部间距 */
   }
 }
 @media (max-width: 480px) {
-  .card-image {
-    height: 200px; /* Smaller for mobile */
+  .card {
+    height: 100%; /* 自适应高度 */
+    margin-bottom: 0.75rem; /* 超小屏幕进一步减小间距 */
+  }
+}
+
+.card-content-div {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 100%;
+  margin: 1.5rem auto; /* 居中对齐 */
+  padding: 2rem 0;
+}
+@media (max-width: 768px) {
+  .card-content-div {
+    margin: 1rem auto; /* 小屏幕减小外边距 */
+    padding: 1.5rem 0; /* 减小内边距 */
+  }
+}
+@media (max-width: 480px) {
+  .card-content-div {
+    margin: 0.75rem auto; /* 超小屏幕进一步减小 */
+    padding: 1rem 0;
+  }
+}
+
+.card-img {
+  width: 50%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease;
+  margin: 0 2rem;
+}
+@media (max-width: 768px) {
+  .card-img {
+    width: 100%;
+    height: 40%;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+  }
+}
+.card-img:hover {
+  transform: scale(1.02);
+}
+@media (max-width: 480px) {
+  .card-img {
+    width: 100%;
+    height: 40%;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
   }
 }
 
 .card-content {
-  width: 50%;
-  height: 100%;
+  flex: 1;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #fff; /* Consistent with card background */
+  height: 100%;
+}
+.card-content.odd {
+  background-color: white;
+}
+.card-content.even {
+  background-color: white;
 }
 @media (max-width: 768px) {
   .card-content {
     width: 100%;
-    height: auto;
-    padding: 20px 0; /* Vertical padding for mobile */
+    height: auto; /* 自适应高度 */
   }
 }
 
-.card-text {
-  width: 85%;
-  margin: 0 auto;
-  padding: 30px 0; /* Generous padding like Apple’s sections */
-  text-align: left;
-}
-@media (max-width: 768px) {
-  .card-text {
-    width: 90%;
-    padding: 20px 0;
-    text-align: center; /* Centered text on mobile */
-  }
-}
-@media (max-width: 480px) {
-  .card-text {
-    padding: 15px 0;
-  }
+h1 {
+  font-size: 48px;
+  font-weight: 600;
+  color: #000;
+  margin: 0 0 10px;
+  letter-spacing: -0.5px;
 }
 
 .card-title {
-  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 36px; /* Matches h2 in .vision */
-  font-weight: 600; /* Bold like Apple’s headings */
-  color: #000;
-  margin: 0 0 15px; /* Spacing like .text-wrapper h2 */
-  letter-spacing: -0.5px; /* Subtle tightening */
-}
-.card-title a {
-  color: #000;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-.card-title a:hover {
-  color: #0071e3; /* Apple’s blue for links */
+  margin: 0;
 }
 @media (max-width: 768px) {
   .card-title {
-    font-size: 28px;
+    font-size: 1.5rem; /* 小屏幕减小标题字体 */
+    margin-top: 1rem;
   }
 }
 @media (max-width: 480px) {
   .card-title {
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: 1.25rem; /* 超小屏幕进一步减小 */
+    margin-top: 0.75rem;
   }
 }
 
-.card-description {
-  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 18px; /* Matches p in .vision */
-  font-weight: 400;
+.card-description_less {
+  font-size: 14px;
   color: #666;
-  line-height: 1.6; /* Consistent readability */
-  margin: 0;
+  margin-top: 8px;
   display: -webkit-box;
-  -webkit-line-clamp: 4; /* Slightly more lines for desktop */
+  -webkit-line-clamp: 3; /* 限制最多显示 5 行 */
+  line-clamp: 5;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 @media (max-width: 768px) {
-  .card-description {
-    font-size: 16px;
-    -webkit-line-clamp: 3;
+  .card-description_less {
+    font-size: 13px; /* 小屏幕减小描述字体 */
+    -webkit-line-clamp: 4; /* 减少行数 */
+    line-clamp: 4;
   }
 }
 @media (max-width: 480px) {
-  .card-description {
-    font-size: 14px;
-    -webkit-line-clamp: 2; /* Fewer lines on small screens */
+  .card-description_less {
+    font-size: 12px; /* 超小屏幕进一步减小 */
+    -webkit-line-clamp: 3; /* 更少行数 */
+    line-clamp: 3;
   }
+}
+
+h1 a {
+  color: #333;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+h1 a:hover {
+  color: rgb(97, 88, 255);
 }
 
 /*# sourceMappingURL=card-apple.css.map */

@@ -28,7 +28,6 @@
     </div>
   </div>
 </div>
-
 <style lang="scss">
   .nav-bar {
     --navbar-height: 7vh;
@@ -45,9 +44,16 @@
     .nav-container {
       height: 100%;
       display: flex;
+      overflow-x: auto; /* 允许横向滚动 */
+      white-space: nowrap; /* 防止子元素换行 */
+      scrollbar-width: none; /* 隐藏 Firefox 滚动条 */
+      -ms-overflow-style: none; /* 隐藏 IE 滚动条 */
+
+      &::-webkit-scrollbar {
+        display: none; /* 隐藏 WebKit 滚动条 */
+      }
 
       .item {
-        //flex: 1;
         height: 100%;
         padding: 0 20px;
         font-size: 16px;
@@ -61,13 +67,20 @@
         transition: background-color 0.3s ease;
         text-decoration: none;
         border: none;
+        flex-shrink: 0; /* 防止元素被缩小 */
       }
 
       .item:hover {
-        height: 100%;
         background-color: rgba(97, 88, 255);
         color: #fff;
       }
+    }
+  }
+
+  /* 仅在小屏幕设备上生效 */
+  @media (max-width: 768px) {
+    .nav-container {
+      padding: 0 10px; /* 增加内边距，避免左右卡住 */
     }
   }
 </style>

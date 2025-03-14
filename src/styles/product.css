@@ -89,6 +89,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, 300px);
   justify-content: center;
+  justify-items: center;
   gap: 30px;
   padding: 40px 0;
 }

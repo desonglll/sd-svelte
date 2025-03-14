@@ -6,7 +6,6 @@
   <img class="logo-sd" src="/logo-sd.jpg" alt="logo-sd" />
   <img class="logo-green" src="/logo-green.png" alt="logo-green" />
 </button>
-
 <style lang="scss">
   .logo-container {
     all: unset;
@@ -25,7 +24,7 @@
     }
   }
 
-  /* 📱 小屏幕优化（手机 & 平板） */
+  /* 📱 小屏幕优化（隐藏 .logo-green，只显示 .logo-sd） */
   @media (max-width: 768px) {
     .logo-container {
       height: auto; /* 适配小屏幕 */
@@ -33,10 +32,12 @@
       gap: 5px; /* 调整间距 */
     }
 
-    .logo-sd,
+    .logo-sd {
+      display: none; /* 隐藏绿色 logo */
+    }
+
     .logo-green {
-      width: 80%; /* 调整图片大小 */
-      height: auto;
+      display: none; /* 隐藏绿色 logo */
     }
   }
 
@@ -45,9 +46,8 @@
       gap: 2px; /* 进一步减少间距 */
     }
 
-    .logo-sd,
-    .logo-green {
-      width: 70%; /* 进一步缩小 */
+    .logo-sd {
+      width: 50%; /* 进一步缩小 */
     }
   }
 </style>
