@@ -9,7 +9,7 @@
 
     <div class="nav-container">
       <button id="nav-1" class="item" on:click={() => goto("/sd")}>Home</button>
-      <button id="nav-2" class="item" on:click={() => goto("/sd/product")}
+      <button id="nav-2" class="item" on:click={() => goto("/sd/product/All")}
       >Product
       </button
       >
