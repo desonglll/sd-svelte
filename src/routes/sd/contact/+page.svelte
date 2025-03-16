@@ -11,6 +11,7 @@
   .about {
     background-color: #f5f5f7;
   }
+
   .top-img {
     width: 100%;
   }

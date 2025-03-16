@@ -10,7 +10,8 @@
     image?: string;
   }
 
-  import news from "../../../data/news.json";
+  import news from "../../../data/json/news.json";
+
   const newsList: NewsItem[] = news.sort((a, b) => b.id - a.id);
 
   function handleNewsClick(id: number) {
@@ -36,10 +37,10 @@
         <div class="news-info">
           <h2>{news.title}</h2>
           <time datetime={news.date}
-            >{new Date(news.date).toLocaleDateString("en-US", {
-              month: "long",
-              day: "numeric",
-            })}</time
+          >{new Date(news.date).toLocaleDateString("en-US", {
+            month: "long",
+            day: "numeric",
+          })}</time
           >
           <p>{news.excerpt}</p>
         </div>
@@ -59,10 +60,9 @@
     max-width: 1200px; // 更宽的容器，苹果官网常用宽布局
     margin: 0 auto;
     padding: 0 24px;
-    font-family:
-      "SF Pro Display",
-      -apple-system,
-      sans-serif;
+    font-family: "SF Pro Display",
+    -apple-system,
+    sans-serif;
     background: $background;
     min-height: 100vh;
   }
@@ -109,6 +109,7 @@
 
   .news-image {
     margin: 0;
+
     img {
       width: 100%;
       height: 240px; // 更高的图片区域
@@ -119,6 +120,7 @@
 
   .news-info {
     padding: 24px;
+
     h2 {
       font-size: 28px; // 更大的标题
       font-weight: 600;
@@ -126,6 +128,7 @@
       margin-bottom: 10px;
       line-height: 1.2;
     }
+
     time {
       font-size: 17px;
       color: $text-secondary;
@@ -133,6 +136,7 @@
       margin-bottom: 14px;
       letter-spacing: 0.01em;
     }
+
     p {
       font-size: 19px; // 稍大的正文字体
       color: #333;
@@ -152,9 +156,11 @@
     }
     .news-info {
       padding: 20px;
+
       h2 {
         font-size: 24px;
       }
+
       p {
         font-size: 17px;
       }

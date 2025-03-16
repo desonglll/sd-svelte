@@ -2,7 +2,7 @@
   import YtbVideo from "$lib/components/common/YtbVideo.svelte";
   import Card from "$lib/components/common/Card.svelte";
   import Anchor from "$lib/components/common/Anchor.svelte";
-  import demo from "$lib/nav";
+  import cardItems from "../../data/card_items";
   import StaticsData from "$lib/components/StaticsData.svelte";
   import TagNavData from "$lib/components/TagNavData.svelte";
   import Svg from "$lib/components/common/Svg.svelte";
@@ -12,17 +12,17 @@
 <div class="page">
   <YtbVideo />
   <div class="static-index">
-    <img style="width: 100%;height: auto" src="/about-hero.jpg" />
+    <img style="width: 100%;height: auto" src="/about-hero.jpg" alt="static-index" />
   </div>
   <Anchor
-    items={demo.map((item) => ({
+    items={cardItems.map((item) => ({
       title: item.title,
       href: item.id.toString(),
       key: item.id,
     }))}
   />
   <div class="card-list">
-    {#each demo as card (card.id)}
+    {#each cardItems as card (card.id)}
       <Card
         id={card.id.toString()}
         title={card.title}

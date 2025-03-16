@@ -1,4 +1,4 @@
-import axios from "../../lib/axios.ts";
+import axios from "../../lib/axios";
 import type { PageLoad } from "./$types";
 
 export const load: PageLoad = async ({ fetch }) => {

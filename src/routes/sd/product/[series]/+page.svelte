@@ -1,9 +1,11 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import type { Category, Product, Series } from "$lib/props";
-  import { series, categories, products } from "$lib/nav";
+  import { series } from "../../../../data/series";
+  import { categories } from "../../../../data/category";
   import type { PageProps } from "../../../../../.svelte-kit/types/src/routes/sd/product/[series]/$types";
   import { goto } from "$app/navigation";
+  import { products } from "../../../../data/product";
 
   let { data }: PageProps = $props();
   console.log(data);
@@ -129,5 +131,5 @@
 </main>
 
 <style lang="scss">
-  @import "$styles/product";
+  @use "$styles/product";
 </style>

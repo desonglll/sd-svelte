@@ -1,5 +1,5 @@
 import type { PageLoad } from "./$types";
-import { categories } from "$lib/nav";
+import { categories } from "../../../../../data/category";
 
 export const load: PageLoad = ({ params }) => {
   if (params.category) {

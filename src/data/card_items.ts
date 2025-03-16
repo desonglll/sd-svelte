@@ -1,7 +1,4 @@
-import type { Category, Product, Series } from "$lib/props";
-import static_data from "../data/tooth.json";
-
-const demo = [
+const cardItems = [
   {
     id: 1,
     navs: [
@@ -93,18 +90,4 @@ const demo = [
   },
 ];
 
-export default demo;
-
-export const products: Product[] = static_data;
-export const series: Series[] = [
-  { id: 0, name: "All", title: "All Products" }, // 添加 "All" 选项
-  ...Array.from(
-    new Map(
-      products.map((p) => [p.category.series.id, p.category.series]),
-    ).values(),
-  ),
-];
-
-export const categories: Category[] = Array.from(
-  new Map(products.map((p) => [p.category.id, p.category])).values(),
-);
+export default cardItems;

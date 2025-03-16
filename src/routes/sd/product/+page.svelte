@@ -1,9 +1,9 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import static_data from "../../../data/tooth.json";
   import type { Category, Product, Series } from "$lib/props";
+  import tooth from "../../../data/tooth";
 
-  const products: Product[] = static_data;
+  const products: Product[] = tooth;
   const seriesList: Series[] = [
     { id: 0, name: "All", title: "All Products" }, // 添加 "All" 选项
     ...Array.from(
@@ -137,5 +137,5 @@
 </main>
 
 <style lang="scss">
-  @import "$styles/product";
+  @use "$styles/product";
 </style>

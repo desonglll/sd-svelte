@@ -1,10 +1,4 @@
 @charset "UTF-8";
-body {
-  margin: 0;
-  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: #f5f5f7;
-}
-
 .about-container {
   max-width: 1200px;
   margin: 0 auto;

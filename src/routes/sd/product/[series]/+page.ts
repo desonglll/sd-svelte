@@ -1,5 +1,5 @@
 import type { PageLoad } from "./$types";
-import series from "../../../../data/series.json";
+import series from "../../../../data/json/series.json";
 
 export const load: PageLoad = ({ params }) => {
   if (params.series) {

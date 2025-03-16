@@ -1,14 +1,24 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import type { Category, Product, Series } from "$lib/props";
-  import { series, categories, products } from "$lib/nav";
+  import { series } from "../../../../../data/series";
   import { goto } from "$app/navigation";
   import type { PageProps } from "../../../../../../.svelte-kit/types/src/routes/sd/product/[series]/[category]/$types";
+  import { categories } from "../../../../../data/category";
+  import { products } from "../../../../../data/product";
 
   let { data }: PageProps = $props();
 
   let selectedSeries = $state<Series | null>(null);
-  let selectedCategory = $state<Category | null>(data);
+  let selectedCategory = $state<Category | null>({
+    description: data.description || "",
+    id: data.id || 0,
+    imageSrc: data.imageSrc || "",
+    name: data.name || "",
+    series: { id: data.series?.id || 0, name: data.series?.name || "", title: data.series?.title || "" },
+    slug: data.slug || "",
+    title: data.title || ""
+  });
   let filteredCategories = $state<Category[]>([]);
   let filteredProducts = $state<Product[]>([]);
 
@@ -128,5 +138,5 @@
 </main>
 
 <style lang="scss">
-  @import "$styles/product";
+  @use "$styles/product";
 </style>
