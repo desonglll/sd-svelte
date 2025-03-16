@@ -6,8 +6,6 @@
   import StaticsData from "$lib/components/StaticsData.svelte";
   import TagNavData from "$lib/components/TagNavData.svelte";
   import Svg from "$lib/components/common/Svg.svelte";
-  import Logo from "$lib/components/common/Logo.svelte";
-
   // const { data }: PageProps = $props();
 </script>
 
@@ -66,5 +64,4 @@
       display: block; /* 小屏幕显示 */
     }
   }
-
 </style>

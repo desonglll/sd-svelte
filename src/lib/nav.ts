@@ -69,7 +69,7 @@ const demo = [
     content:
       "Welcome to the Shunde Machinery Parts Product Series section! We provide a wide range of construction machinery parts, including different types of bucket teeth from well-known brands such as Carter and Komatsu, to meet various construction needs. Whether it is wear-resistant, reinforced or standard bucket teeth, you can find the right product here. Through this section, you can quickly browse various accessories, learn about product details, and help your equipment operate efficiently!",
     image: "/bucket.jpg",
-    slug: "product",
+    slug: "product/All",
   },
   {
     id: 2,
