@@ -1,4 +1,4 @@
-import { defineConfig, loadEnv } from "vite";
+import { defineConfig } from "vite";
 import { sveltekit } from "@sveltejs/kit/vite";
 import path from "node:path";
 
